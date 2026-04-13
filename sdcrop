@@ -3,5 +3,5 @@
 for file in *.mov
 do
     temp="$file"
-    ffmpeg -y -i $temp -filter:v crop=in_w/\(4/3\):in_h -c:v prores -profile:v 2 -pix_fmt yuv420p ${i/HD.mov}SD.mov
+    ffmpeg -y -i "$temp" -filter:v crop=in_w/\(4/3\):in_h -c:v prores -profile:v 2 -pix_fmt yuv420p "${file//HD/SD}"
 done
